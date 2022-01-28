@@ -25,7 +25,7 @@ function Navbar(props) {
     }
     return (
         <nav id="navbar_top" className="navbar pt-5 navbar-default  navbar-expand-lg  container-fluid na">
-        
+
             <a className="navbar-brand brand" href="https://luvfinder.herokuapp.com/">LUVFINDER</a>
             <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span className="navbar-toggler-icon" />
@@ -54,11 +54,15 @@ function Navbar(props) {
                             {displayCryptos()}
                         </div>
                     </div>
-                   
+                    <li className="nav-item mr-0 " >
+
+                        <a className='btn  tw' href="https://twitter.com/LuvInuCoin" target="_blank" rel="noreferrer" style={{color:"black"}}>CONNECT <i style={{color:"blue"}} class="fab fa-telegram-plane" ></i></a>
+                    </li>
+
                 </ul>
             </div>
         </nav>
-        
+
 
 
     );

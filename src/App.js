@@ -100,14 +100,59 @@ function App() {
     }
     onSubmit();
   }, [currentCrypto, currency]);
-
-  return (
-    <div className='container-fluid'>
-      <Navbar updateCrypto={updateCrypto} currentCrypto={currentCrypto} cryptoExchanges={cryptoExchanges} currency={currency} setCurrency={setCurrency} index={index} setIndex={setIndex} respData={respData} />
-      <Body graphdata={graphdata} currentCrypto={currentCrypto} cryptoExchanges={cryptoExchanges} response={respData} index={index} updateResponse={updateResponse} />
-
+  
+  if(respData){
+    return (
+      <div className='container-fluid'>
+        <Navbar updateCrypto={updateCrypto} currentCrypto={currentCrypto} cryptoExchanges={cryptoExchanges} currency={currency} setCurrency={setCurrency} index={index} setIndex={setIndex} respData={respData} />
+        <Body graphdata={graphdata} currentCrypto={currentCrypto} cryptoExchanges={cryptoExchanges} response={respData} index={index} updateResponse={updateResponse} />
+  
+      </div>
+    );
+  }
+  else {
+    return (<div className="w-100 d-flex justify-content-center ">
+     <div className="main">
+<span className="stand"></span>
+<div className="cat">
+ <div className="body"></div>
+ <div className="head">
+   <div className="ear"></div>
+ <div className="ear"></div>
+ </div>
+ <div className="face">
+  <div className="nose"></div>
+ <div className="whisker-container">
+   <div className="whisker"></div>
+   <div className="whisker"></div>
+ </div>
+ <div className="whisker-container">
+   <div className="whisker"></div>
+   <div className="whisker"></div>
+ </div>
+ </div>
+ <div className="tail-container">
+  <div className="tail">
+    <div className="tail">
+      <div className="tail">
+        <div className="tail">
+          <div className="tail">
+            <div className="tail">
+              <div className="tail"></div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
-  );
+  </div>
+ </div>
+</div>
+</div>
+
+    </div>)
+}
+  
+ 
 }
 
 export default App;
