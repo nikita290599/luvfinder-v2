@@ -25,13 +25,18 @@ nav {
 .nav-link{
     font-family: 'IBM Plex Sans', sans-serif; 
     color:black;
-    background-color: #fafbfd;
+    background-color:white;
     margin-left:15px;
 }
 .my-toggler{
     border-color: white;
 }
 .nav-link:hover{
+    color:#ffa800; 
+    background-color: white;
+}
+.nav-link:active{
+    border:1px solid white;
     color:#ffa800; 
     background-color: white;
 }
