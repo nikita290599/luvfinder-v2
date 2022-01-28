@@ -27,8 +27,8 @@ function Navbar(props) {
         <nav id="navbar_top" className="navbar pt-5 navbar-default  navbar-expand-lg  container-fluid na">
 
             <a className="navbar-brand brand" href="https://luvfinder.herokuapp.com/">LUVFINDER</a>
-            <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                <span className="navbar-toggler-icon" />
+            <button className="navbar-toggler custom-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span className="navbar-toggler-icon " />
             </button>
             <div className="collapse navbar-collapse " id="navbarSupportedContent">
                 <ul className="navbar-nav w-100 d-flex justify-content-end">
