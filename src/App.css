@@ -2,7 +2,8 @@ body{
   font-family: 'IBM Plex Sans', sans-serif; 
 }
 .card{
-  background-color: #fafaf6;
+  font-family:  roboto,ubuntu,sans-serif;
+  background-color: white;
   border:1px solid #fafaf6;
   margin:auto;
 }

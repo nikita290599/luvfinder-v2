@@ -1,6 +1,6 @@
 
 import "../App.css"
-function Card(props) {
+function BigCard(props) {
   const cryptonames = {
     "DOGE": "Dogecoin",
     "SHIB": "Shiba-inu",
@@ -20,24 +20,25 @@ function Card(props) {
     "EUR": "European Union",
     "RUB": "Russian Ruble"
   };
-  return (<div className="card pull-up mt-5" style={{ width: '100%' }}>
-    <div className="card-body">
-      <h5 className="card-title d-flex">
+  return (<div className="card pull-up mt-5 text-center" style={{ width: '100%' }}>
+    <div className="card-body ">
+      {/* <h5 className="card-title d-flex">
         <img src={props.image} alt={props.symbol} width="30px" height="30px"></img>
         <div style={{paddingLeft:"10px"}}>
         <div style={{ fontWeight: "700" }}>{props.currentCrypto}/{props.symbol}</div>
         <div style={{  fontSize: "14px"  ,color:"#787b86" }}>{cryptonames[props.currentCrypto]}/{currencyNames[props.symbol]}</div>
         </div>
         
-      </h5>
-      <h4 className="card-text" style={{    fontSize:"28px",fontWeight:"700"}}>{props.data} %</h4>
-      <h6 style={{color:"#ffa800"}}>{props.content}</h6>
+      </h5> */}
+      <h3 style={{color:"#ffa800"}}>{props.content}</h3>
+      <h4 className="card-text" style={{    fontSize:"32px",fontWeight:"700"}}>{props.data} %</h4>
+      
 
-      <div style={{ width: "100%" }}></div>
+      <div style={{  fontSize: "14px"  ,color:"#787b86" }}>Average {props.currentCrypto}/{props.symbol}  net price including commission</div>
     </div>
   </div>);
 
 
 }
 
-export default Card;
+export default BigCard;

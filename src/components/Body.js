@@ -1,6 +1,7 @@
 import NumberFormat from "react-number-format";
 import { useRef } from 'react';
 import { Bar, getDatasetAtEvent } from 'react-chartjs-2';
+import BigCard from "./BigCard";
 import Card from "./Card";
 import shiba from "../images/shib.png";
 import curr from "../currency.json"
@@ -85,7 +86,7 @@ function Body(props) {
                 return (
                     <tr key={item.id}>
                         <th scope="row">{index + 1}</th>
-                        <td ><img className='rounded-circle' src={images[item.name]} alt={"logo" + index} width="10%"></img><span>{item.name}</span></td>
+                        <td ><img className='rounded-circle' src={images[item.name]} alt={"logo" + index} width="10%"></img><span style={{fontWeight:"600"}}>{item.name}</span></td>
                         <td>{curr.results[props.index].symbol} {item.last_trade_price}</td>
                         <td> {(item.bid_percentage)} %</td>
                         <td><NumberFormat
@@ -108,8 +109,8 @@ function Body(props) {
         
         return (
 
-            <div className="cont conta">
-                <div className="row">
+            <div className="container-fluid conta">
+                <div className="row" style={{padding:"0 14px 0 14px"}}>
                     <div className="col-lg-8 col-md-7 col-xs-12 d-flex flex-column justify-content-center  align-items-left">
                         <div className="h w-100 ">Top Memes Tokens by Market Capitalization</div>
                         <div className="small-heading">This page lists the top meme coins and tokens. These projects are listed by market capitalization with the largest first and then descending in order.</div>
@@ -120,19 +121,26 @@ function Body(props) {
                 </div>
                 <div className="container-fluid">
                 <div className="row m-auto">
-                    <div className="col-lg-4 col-md-6 col-xs-1" data-aos="fade-up"><Card content={"Last 5 mins"} currentCrypto={props.currentCrypto} image={cryptImg[props.currentCrypto]}  symbol={curr.results[props.index].abbr} data= {props.response.previousdata.last5Mins}  /></div>
-                    <div className="col-lg-4 col-md-6 col-xs-1" data-aos="fade-up"><Card content={"Last 1 hour"} currentCrypto={props.currentCrypto} image={cryptImg[props.currentCrypto]} symbol={curr.results[props.index].abbr} data={props.response.previousdata.last1Hour}  /></div>
-                    <div className="col-lg-4 col-md-6 col-xs-1" data-aos="fade-up"><Card content={"Average BTC/INR net price including commission"} currentCrypto={props.currentCrypto} image={cryptImg[props.currentCrypto]} symbol={curr.results[props.index].abbr} data={Math.round(props.response.previousdata.avg_trage * 10000000000) /10000000000}/></div>
-                    <div className="col-lg-4 col-md-6 col-xs-1" data-aos="fade-up"><Card content={"Last 1 Day"} currentCrypto={props.currentCrypto} image={cryptImg[props.currentCrypto]} symbol={curr.results[props.index].abbr} data={props.response.previousdata.last24Hours}/></div>
-                    <div className="col-lg-4 col-md-6 col-xs-1" data-aos="fade-up"><Card content={"Last 7 Days"} currentCrypto={props.currentCrypto} image={cryptImg[props.currentCrypto]} symbol={curr.results[props.index].abbr} data={props.response.previousdata.last7Days}/></div>
+                    <div className="col-lg-3 col-md-6 col-xs-1 m-auto" data-aos="fade-up"><Card content={"Last 5 mins"} currentCrypto={props.currentCrypto} image={cryptImg[props.currentCrypto]}  symbol={curr.results[props.index].abbr} data= {props.response.previousdata.last5Mins}  /></div>
+                    <div className="col-lg-3 col-md-6 col-xs-1" data-aos="fade-up"><Card content={"Last 1 hour"} currentCrypto={props.currentCrypto} image={cryptImg[props.currentCrypto]} symbol={curr.results[props.index].abbr} data={props.response.previousdata.last1Hour}  /></div>
+                    
+                    <div className="col-lg-3 col-md-6 col-xs-1" data-aos="fade-up"><Card content={"Last 1 Day"} currentCrypto={props.currentCrypto} image={cryptImg[props.currentCrypto]} symbol={curr.results[props.index].abbr} data={props.response.previousdata.last24Hours}/></div>
+                    <div className="col-lg-3 col-md-6 col-xs-1" data-aos="fade-up"><Card content={"Last 7 Days"} currentCrypto={props.currentCrypto} image={cryptImg[props.currentCrypto]} symbol={curr.results[props.index].abbr} data={props.response.previousdata.last7Days}/></div>
+                    <div className="col-lg-6 col-md-6 col-xs-1 m-auto" data-aos="fade-up"><BigCard content={"Best Price to Trade"} currentCrypto={props.currentCrypto} image={cryptImg[props.currentCrypto]} symbol={curr.results[props.index].abbr} data={Math.round(props.response.previousdata.avg_trage * 10000000000) /10000000000}/></div>
                 </div>
                 
             
                 </div>
                
+        <div className="row justify-content-center" style={{paddingTop:"100px"}}>
+				<div className="col-lg-7 col-12 text-center" data-aos="fade-up">
+					<h1 className="mb-15"  style={{color:"#172b4c", fontWeight:"500"}}>Market Live</h1>					
+					<hr className="w-100 yellowline"/>
+				</div>
+			</div>
 
                 {/* table starts */}
-                <table class="table mt-5" data-aos="fade-up">
+                <table className="table mt-5" data-aos="fade-up">
                     <thead>
                     <tr>
                                 <th className='pointer rounded-top align-middle' scope="col">#</th>
@@ -155,33 +163,33 @@ function Body(props) {
     }
     else {
         return (<div className="w-100 d-flex justify-content-center ">
-         <div class="main">
-    <span class="stand"></span>
-    <div class="cat">
-     <div class="body"></div>
-     <div class="head">
-       <div class="ear"></div>
-     <div class="ear"></div>
+         <div className="main">
+    <span className="stand"></span>
+    <div className="cat">
+     <div className="body"></div>
+     <div className="head">
+       <div className="ear"></div>
+     <div className="ear"></div>
      </div>
-     <div class="face">
-      <div class="nose"></div>
-     <div class="whisker-container">
-       <div class="whisker"></div>
-       <div class="whisker"></div>
+     <div className="face">
+      <div className="nose"></div>
+     <div className="whisker-container">
+       <div className="whisker"></div>
+       <div className="whisker"></div>
      </div>
-     <div class="whisker-container">
-       <div class="whisker"></div>
-       <div class="whisker"></div>
+     <div className="whisker-container">
+       <div className="whisker"></div>
+       <div className="whisker"></div>
      </div>
      </div>
-     <div class="tail-container">
-      <div class="tail">
-        <div class="tail">
-          <div class="tail">
-            <div class="tail">
-              <div class="tail">
-                <div class="tail">
-                  <div class="tail"></div>
+     <div className="tail-container">
+      <div className="tail">
+        <div className="tail">
+          <div className="tail">
+            <div className="tail">
+              <div className="tail">
+                <div className="tail">
+                  <div className="tail"></div>
                 </div>
               </div>
             </div>

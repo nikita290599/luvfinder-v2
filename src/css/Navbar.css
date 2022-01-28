@@ -2,6 +2,13 @@ nav {
     background-color: white;
     font-family: 'IBM Plex Sans', sans-serif;
 }
+#navbar_top{
+    
+    padding:10px 40px 0 30px;
+}
+.nav-top-after{
+ padding:0 10px 0 10px;
+}
 
 .cont{
     width:100vw;
@@ -9,27 +16,25 @@ nav {
 }
 .brand{
     font-size: 2rem;
-    color:#FFC107;
+    color:#ffa800;
     font-weight: 700;
-}
-.brand:hover{
-    color:#1d1c1b;
 }
 .nav-link{
     font-family: 'IBM Plex Sans', sans-serif; 
     color:black;
+    background-color: #fafbfd;
     margin-left:15px;
 }
 .nav-link:hover{
-    color:#FFC107; 
+    color:#ffa800; 
     background-color: white;
 }
 .dropdown-toggle:active{
-    color:#FFC107; 
+    color:#ffa800; 
     background-color: white;
 }
 .navbar-toggler{
-    background-color:#FFC107;
+    background-color:#ffa800;
 }  
 .navbar-toggler-icon{
     filter: brightness(0) invert(1);
@@ -41,7 +46,7 @@ nav {
  background-color: white;
 }
 .dropdown-item:hover{
-background-color:#FFC107 ;
+background-color:#ffa800 ;
 color:white;
 }
 .navbar-collapse{
