@@ -9,6 +9,9 @@ nav {
 .nav-top-after{
  padding:0 10px 0 10px;
 }
+.nav-item{
+    background-color: white;
+}
 
 .cont{
     width:100vw;
