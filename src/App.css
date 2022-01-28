@@ -27,3 +27,7 @@ body{
   box-shadow: 0 14px 24px rgba(black,.2);
   z-index: 999;
 }
+body{
+  background-color: white;
+ 
+}

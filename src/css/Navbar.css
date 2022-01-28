@@ -4,8 +4,8 @@ nav {
 }
 
 .cont{
-    width:85vw;
-    margin:auto;
+    width:100vw;
+    padding: 0 7.5% 0 7.5%;
 }
 .brand{
     font-size: 2rem;
@@ -27,8 +27,14 @@ nav {
 .dropdown-toggle:active{
     color:#FFC107; 
     background-color: white;
-    
 }
+.navbar-toggler{
+    background-color:#FFC107;
+}  
+.navbar-toggler-icon{
+    filter: brightness(0) invert(1);
+}
+
 .dropdown button{
  padding:8px;
  border:0px;

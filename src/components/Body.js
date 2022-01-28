@@ -154,70 +154,44 @@ function Body(props) {
         );
     }
     else {
-        return (<div>
-            <div class="paw-print-1">
-    <div class="pad large"></div>
-    <div class="pad small-1"></div>
-    <div class="pad small-2"></div>
-    <div class="pad small-3"></div>
-    <div class="pad small-4"></div>
+        return (<div className="w-100 d-flex justify-content-center ">
+         <div class="main">
+    <span class="stand"></span>
+    <div class="cat">
+     <div class="body"></div>
+     <div class="head">
+       <div class="ear"></div>
+     <div class="ear"></div>
+     </div>
+     <div class="face">
+      <div class="nose"></div>
+     <div class="whisker-container">
+       <div class="whisker"></div>
+       <div class="whisker"></div>
+     </div>
+     <div class="whisker-container">
+       <div class="whisker"></div>
+       <div class="whisker"></div>
+     </div>
+     </div>
+     <div class="tail-container">
+      <div class="tail">
+        <div class="tail">
+          <div class="tail">
+            <div class="tail">
+              <div class="tail">
+                <div class="tail">
+                  <div class="tail"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+     </div>
+   </div>
 </div>
-    
-<div class="paw-print-2">
-    <div class="pad large"></div>
-    <div class="pad small-1"></div>
-    <div class="pad small-2"></div>
-    <div class="pad small-3"></div>
-    <div class="pad small-4"></div>
-</div>    
-    
-<div class="paw-print-3">
-    <div class="pad large"></div>
-    <div class="pad small-1"></div>
-    <div class="pad small-2"></div>
-    <div class="pad small-3"></div>
-    <div class="pad small-4"></div>
-</div>    
-    
-<div class="paw-print-4">
-    <div class="pad large"></div>
-    <div class="pad small-1"></div>
-    <div class="pad small-2"></div>
-    <div class="pad small-3"></div>
-    <div class="pad small-4"></div>
-</div>
-    
-<div class="paw-print-5">
-    <div class="pad large"></div>
-    <div class="pad small-1"></div>
-    <div class="pad small-2"></div>
-    <div class="pad small-3"></div>
-    <div class="pad small-4"></div>
-</div>
-    
-<div class="paw-print-6">
-    <div class="pad large"></div>
-    <div class="pad small-1"></div>
-    <div class="pad small-2"></div>
-    <div class="pad small-3"></div>
-    <div class="pad small-4"></div>
-</div>
-    
-<div class="paw-print-7">
-    <div class="pad large"></div>
-    <div class="pad small-1"></div>
-    <div class="pad small-2"></div>
-    <div class="pad small-3"></div>
-    <div class="pad small-4"></div>
-</div>
-
-<div class="paw-print-8">
-    <div class="pad large"></div>
-    <div class="pad small-1"></div>
-    <div class="pad small-2"></div>
-    <div class="pad small-3"></div>
-    <div class="pad small-4"></div>
-</div>    
+   
         </div>)
     }
 
