@@ -140,6 +140,7 @@ function Body(props) {
 			</div>
 
                 {/* table starts */}
+                <div class="table-responsive">
                 <table className="table mt-5" data-aos="fade-up">
                     <thead>
                     <tr>
@@ -154,6 +155,8 @@ function Body(props) {
                     {render()}
                     </tbody>
                 </table>
+                </div>
+                
                 {/* {props.graphdata? "yes":"no"}
                 <MyGraph ref={chartRef}  onClick={onClick} currentCrypto={props.currentCrypto}  graphdata={props.graphdata.maindata[0].last1days.prices} />
                  */}
