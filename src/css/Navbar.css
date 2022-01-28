@@ -1,0 +1,40 @@
+nav {
+    background-color: white;
+    font-family: 'IBM Plex Sans', sans-serif;
+}
+
+.cont{
+    width:85vw;
+    margin:auto;
+}
+.brand{
+    font-size: 2rem;
+    color:#FFC107;
+    font-weight: 700;
+}
+.brand:hover{
+    color:#1d1c1b;
+}
+.nav-link{
+    font-family: 'IBM Plex Sans', sans-serif; 
+    color:black;
+    margin-left:15px;
+}
+.nav-link:hover{
+    color:#FFC107; 
+    background-color: white;
+}
+.dropdown-toggle:active{
+    color:#FFC107; 
+    background-color: white;
+    
+}
+.dropdown button{
+ padding:8px;
+ border:0px;
+ background-color: white;
+}
+.dropdown-item:hover{
+background-color:#FFC107 ;
+color:white;
+}

@@ -1,0 +1,31 @@
+{
+    "results": [
+      {
+        "name": "US Dollar",
+        "abbr": "USD",
+        "symbol": "$"
+      },
+      {
+        "name": "Rupees",
+        "abbr": "INR",
+        "symbol": "₹"
+      },
+      {
+        "name": "Japanese Yen",
+        "abbr": "JPY",
+        "symbol": "¥"
+      },
+      {
+        "name": "Euro",
+        "abbr": "EUR",
+        "symbol": "€"
+      },
+      {
+        "name": "Russian Ruble",
+        "abbr": "RUB",
+        "symbol": "₽"
+      }
+  
+      
+    ]
+  }

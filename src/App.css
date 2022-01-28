@@ -1,0 +1,29 @@
+body{
+  font-family: 'IBM Plex Sans', sans-serif; 
+}
+.card{
+  background-color: #fafaf6;
+  border:1px solid #fafaf6;
+  margin:auto;
+}
+.card:hover{
+  box-shadow: 0 14px 24px rgb(0 0 0 / 20%);
+  z-index:399;
+}
+.pull-up{
+  -webkit-transition: all .25s ease;
+  -o-transition: all .25s ease;
+  -moz-transition: all .25s ease;
+  transition: all .25s ease;
+ 
+}
+.pull-up:hover{
+  -webkit-transform: translateY(-4px) scale(1.02);
+  -moz-transform: translateY(-4px) scale(1.02);
+  -ms-transform: translateY(-4px) scale(1.02);
+  -o-transform: translateY(-4px) scale(1.02);
+  transform: translateY(-4px) scale(1.02);
+  -webkit-box-shadow: 0 14px 24px rgba(black,.2);
+  box-shadow: 0 14px 24px rgba(black,.2);
+  z-index: 999;
+}
