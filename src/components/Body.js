@@ -140,8 +140,8 @@ function Body(props) {
 			</div>
 
                 {/* table starts */}
-                <div class="table-responsive">
-                <table className="table mt-5" data-aos="fade-up">
+                <div class="table-responsive" data-aos="fade-up">
+                <table className="table mt-5" >
                     <thead>
                     <tr>
                                 <th className='pointer rounded-top align-middle' scope="col">#</th>
