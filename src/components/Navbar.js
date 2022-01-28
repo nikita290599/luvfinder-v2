@@ -24,7 +24,7 @@ function Navbar(props) {
 
     }
     return (
-        <nav className="navbar navbar-default  navbar-expand-lg na bg-light cont">
+        <nav className="navbar navbar-default  navbar-expand-lg na cont">
         
             <a className="navbar-brand brand" href="https://luvfinder.herokuapp.com/">LUVFINDER</a>
             <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
