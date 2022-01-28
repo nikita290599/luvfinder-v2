@@ -146,9 +146,9 @@ function Body(props) {
                     {render()}
                     </tbody>
                 </table>
-                {props.graphdata? "yes":"no"}
+                {/* {props.graphdata? "yes":"no"}
                 <MyGraph ref={chartRef}  onClick={onClick} currentCrypto={props.currentCrypto}  graphdata={props.graphdata.maindata[0].last1days.prices} />
-                
+                 */}
             </div>
  
         );
