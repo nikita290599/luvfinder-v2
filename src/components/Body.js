@@ -1,9 +1,8 @@
 import NumberFormat from "react-number-format";
 import { useRef } from 'react';
-import { Bar, getDatasetAtEvent } from 'react-chartjs-2';
 import BigCard from "./BigCard";
 import Card from "./Card";
-import shiba from "../images/dog_love.webp";
+import shiba from "../images/min.png";
 import curr from "../currency.json"
 import logo1 from "../images/1.png"
 import logo2 from "../images/2.png"
@@ -42,7 +41,7 @@ import hoge from "../images/hoge.png"
 import dobo from "../images/doge.png"
 import paws from "../images/paws.png"
 import "../css/Body.css"
-import { MyGraph } from "./MyGraph";
+
 function Body(props) {
     const chartRef = useRef();
     const images = {
@@ -76,9 +75,7 @@ function Body(props) {
     const cryptImg={
         'DOGE':doge,'SHIB':shib,"MIM":mim, "SPELL":spell,"BABYDOGE":babydoge,"ELON":elon,"SAMO":samo,"CATE":cate,"HOGE":hoge,"DOBO":dobo 
     }
-    const onClick = (event) => {
-        console.log(getDatasetAtEvent(chartRef.current, event));
-      }
+  
     const render = () => {
         return (
 
@@ -157,9 +154,7 @@ function Body(props) {
                 </table>
                 </div>
                 
-                {/* {props.graphdata? "yes":"no"}
-                <MyGraph ref={chartRef}  onClick={onClick} currentCrypto={props.currentCrypto}  graphdata={props.graphdata.maindata[0].last1days.prices} />
-                 */}
+             
             </div>
  
         );

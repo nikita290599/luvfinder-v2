@@ -22,30 +22,19 @@ function App() {
   useEffect(() => {
 
     async function onSearchSubmit() {
-      // console.log(currentCrypto);
-      // const response =await axios.get(url);
-      // updateResponse(response.data.result[0]);
-      // const res=await axios.get(`https://luvfinder.luvinu.io/api/coinMarket/DOGE`);
-      // setGraph(res.data.result[0]);
-      // console.log("graph",graphdata);
-      const requestOne = axios.get(url);
-      const requestTwo = axios.get(`https://luvfinder.luvinu.io/api/coinMarket/DOGE`);
 
-      axios.all([requestOne, requestTwo]).then(axios.spread((...responses) => {
-        const responseOne = responses[0]
-
-        const responseTwo = responses[1]
-        updateResponse(responseOne.data.result[0]);
-        setGraph(responseTwo.data.result[0]);
-        // use/access the results 
-      })).catch(errors => {
-        console.log(errors);
-        // react on errors.
-      })
+      const response =await axios.get(url);
+      updateResponse(response.data.result[0]);
+      const res=await axios.get(`https://luvfinder.luvinu.io/api/coinMarket/DOGE`);
+      setGraph(res.data);
+ 
+      
 
     }
     onSearchSubmit();
   }, [])
+
+ 
   // Timer logic
   useEffect(() => {
     function timer() {
@@ -69,6 +58,7 @@ function App() {
 
       const response =await axios.get(url);
       updateResponse(response.data.result[0]);
+    
     }
     onSearchSubmit();
   },[bool])
@@ -77,26 +67,13 @@ function App() {
 
   useEffect(() => {
     async function onSubmit() {
-      // seturl(`${BASE_URL}${currentCrypto}-${currency}`)
-      // const response = await axios.get(`${BASE_URL}${currentCrypto}-${currency}`);
-      // await updateResponse(response.data.result[0]);
-      // const res = await axios.get(`https://luvfinder.luvinu.io/api/coinMarket/${currentCrypto}`);
-      // setGraph(res.data.result[0]);
-
-      const requestOne = axios.get(url);
-      const requestTwo = axios.get(`https://luvfinder.luvinu.io/api/coinMarket/${currentCrypto}`);
-
-      axios.all([requestOne, requestTwo]).then(axios.spread((...responses) => {
-        const responseOne = responses[0]
-
-        const responseTwo = responses[1]
-        updateResponse(responseOne.data.result[0]);
-        setGraph(responseTwo.data.result[0]);
-        // use/access the results 
-      })).catch(errors => {
-        console.log(errors);
-        // react on errors.
-      })
+      seturl(`${BASE_URL}${currentCrypto}-${currency}`)
+      const response = await axios.get(`${BASE_URL}${currentCrypto}-${currency}`);
+      updateResponse(response.data.result[0]);
+      const res = await axios.get(`https://luvfinder.luvinu.io/api/coinMarket/${currentCrypto}`);
+      setGraph(res.data.result[0]);
+      console.log("infinite")
+  
     }
     onSubmit();
   }, [currentCrypto, currency]);
