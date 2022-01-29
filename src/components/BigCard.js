@@ -1,5 +1,6 @@
 
 import "../App.css"
+import back from "../images/back-texture.jpg"
 function BigCard(props) {
   const cryptonames = {
     "DOGE": "Dogecoin",
@@ -20,7 +21,7 @@ function BigCard(props) {
     "EUR": "European Union",
     "RUB": "Russian Ruble"
   };
-  return (<div className="card pull-up mt-5 text-center" style={{ width: '100%' }}>
+  return (<div className="card pull-up mt-5 text-center" style={{ width: '100%' ,background:`url(${back})`}}>
     <div className="card-body ">
       {/* <h5 className="card-title d-flex">
         <img src={props.image} alt={props.symbol} width="30px" height="30px"></img>

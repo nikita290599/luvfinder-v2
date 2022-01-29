@@ -117,13 +117,13 @@ function Body(props) {
                     </div>
                 </div>
                 <div className="container-fluid">
-                <div className="row m-auto">
-                    <div className="col-lg-3 col-md-6 col-xs-1 m-auto" data-aos="fade-up"><Card content={"Last 5 mins"} currentCrypto={props.currentCrypto} image={cryptImg[props.currentCrypto]}  symbol={curr.results[props.index].abbr} data= {props.response.previousdata.last5Mins}  /></div>
-                    <div className="col-lg-3 col-md-6 col-xs-1" data-aos="fade-up"><Card content={"Last 1 hour"} currentCrypto={props.currentCrypto} image={cryptImg[props.currentCrypto]} symbol={curr.results[props.index].abbr} data={props.response.previousdata.last1Hour}  /></div>
-                    
-                    <div className="col-lg-3 col-md-6 col-xs-1" data-aos="fade-up"><Card content={"Last 1 Day"} currentCrypto={props.currentCrypto} image={cryptImg[props.currentCrypto]} symbol={curr.results[props.index].abbr} data={props.response.previousdata.last24Hours}/></div>
-                    <div className="col-lg-3 col-md-6 col-xs-1" data-aos="fade-up"><Card content={"Last 7 Days"} currentCrypto={props.currentCrypto} image={cryptImg[props.currentCrypto]} symbol={curr.results[props.index].abbr} data={props.response.previousdata.last7Days}/></div>
-                    <div id="market" className="col-lg-6 col-md-6 col-xs-1 m-auto" data-aos="fade-up"><BigCard content={"Best Price to Trade"} currentCrypto={props.currentCrypto} image={cryptImg[props.currentCrypto]} symbol={curr.results[props.index].abbr} data={Math.round(props.response.previousdata.avg_trage * 10000000000) /10000000000}/></div>
+                <div className="row">
+                    <div className="col-lg-2 col-md-6 col-xs-12" data-aos="fade-up"><Card content={"Last 5 mins"} currentCrypto={props.currentCrypto} image={cryptImg[props.currentCrypto]}  symbol={curr.results[props.index].abbr} data= {props.response.previousdata.last5Mins}  /></div>
+                    <div className="col-lg-2 col-md-6 col-xs-12" data-aos="fade-up"><Card content={"Last 1 hour"} currentCrypto={props.currentCrypto} image={cryptImg[props.currentCrypto]} symbol={curr.results[props.index].abbr} data={props.response.previousdata.last1Hour}  /></div>
+                    <div id="market" className="col-lg-3 col-md-12 col-xs-12 m-auto" data-aos="fade-up"><BigCard content={"Best Price to Trade"} currentCrypto={props.currentCrypto} image={cryptImg[props.currentCrypto]} symbol={curr.results[props.index].abbr} data={Math.round(props.response.previousdata.avg_trage * 10000000000) /10000000000}/></div>
+                    <div className="col-lg-2 col-md-6 col-xs-12" data-aos="fade-up"><Card content={"Last 1 Day"} currentCrypto={props.currentCrypto} image={cryptImg[props.currentCrypto]} symbol={curr.results[props.index].abbr} data={props.response.previousdata.last24Hours}/></div>
+                    <div className="col-lg-2 col-md-6 col-xs-12" data-aos="fade-up"><Card content={"Last 7 Days"} currentCrypto={props.currentCrypto} image={cryptImg[props.currentCrypto]} symbol={curr.results[props.index].abbr} data={props.response.previousdata.last7Days}/></div>
+                   
                 </div>
                 
             
