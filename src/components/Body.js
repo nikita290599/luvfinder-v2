@@ -3,7 +3,7 @@ import { useRef } from 'react';
 import { Bar, getDatasetAtEvent } from 'react-chartjs-2';
 import BigCard from "./BigCard";
 import Card from "./Card";
-import shiba from "../images/shib.png";
+import shiba from "../images/dog_love.webp";
 import curr from "../currency.json"
 import logo1 from "../images/1.png"
 import logo2 from "../images/2.png"
