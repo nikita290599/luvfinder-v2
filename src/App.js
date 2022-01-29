@@ -28,8 +28,6 @@ function App() {
       const res=await axios.get(`https://luvfinder.luvinu.io/api/coinMarket/DOGE`);
       setGraph(res.data);
  
-      
-
     }
     onSearchSubmit();
   }, [])

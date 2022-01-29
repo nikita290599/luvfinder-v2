@@ -1,6 +1,6 @@
 
 import "../App.css"
-import g from "../images/GRAPH.png"
+import g from "../images/graph2.png"
 import { MyGraph } from "./MyGraph";
 function Card(props) {
   const cryptonames = {

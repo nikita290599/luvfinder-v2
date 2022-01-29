@@ -1,6 +1,7 @@
 
 document.addEventListener("DOMContentLoaded", function(){
     window.addEventListener('scroll', function() {
+      let viewportWidth = window.innerWidth;
         if (window.scrollY > 50) {
           document.getElementById('navbar_top').classList.add('fixed-top');
           document.getElementById('navbar_top').classList.remove('pt-5');
