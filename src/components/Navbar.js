@@ -54,9 +54,9 @@ function Navbar(props) {
                             {displayCryptos()}
                         </div>
                     </div>
-                    <li className="nav-item mr-0 " style={{   backgroundColor:"#229ED9",borderRadius: "7px",marginLeft: "6px",color:"white"}}>
+                    <li className="nav-item mr-0 " style={{   backgroundColor:"#229ED9",borderRadius: "7px",marginLeft: "6px",color:"white", width:"120px"}}>
 
-                        <a className='btn ' href="https://twitter.com/LuvInuCoin" target="_blank" rel="noreferrer" style={{color:"white",width:"auto"}}>CONNECT <i style={{color:"white"}} class="fab fa-twitter" ></i></a>
+                        <a className='btn ' href="https://twitter.com/LuvInuCoin" target="_blank" rel="noreferrer" style={{color:"white"}}>CONNECT <i style={{color:"white"}} class="fab fa-twitter" ></i></a>
                     </li>
 
                 </ul>

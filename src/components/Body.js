@@ -104,9 +104,9 @@ function Body(props) {
         return (
           <tr key={item.id}>
             <th scope="row">{index + 1}</th>
-            <td ><img className='rounded-circle' src={images[item.name]} alt={"logo" + index} width="10%"></img><span style={{ fontWeight: "600" }}>{item.name}</span></td>
-            <td><span style={{ fontWeight: "600", marginRight: "5px" }}>{curr.results[props.index].symbol}</span> {item.last_trade_price}</td>
-            <td> {(item.bid_percentage)} %</td>
+            <td className="d-flex align-items-left justify-content-start" ><img className='rounded-circle' src={images[item.name]} alt={"logo" + index} width="18px" height="23px"></img><span style={{ fontWeight: "600" }}>{item.name}</span></td>
+            <td className="LTC" ><span style={{ fontWeight: "600", marginRight: "5px" }}>{curr.results[props.index].symbol}</span> <span>{item.last_trade_price}</span></td>
+            <td className="BID" > {(item.bid_percentage)} %</td>
             <td><span style={{ fontWeight: "600", marginRight: "5px" }}>{curr.results[props.index].symbol}</span><NumberFormat
               value={Math.round(item.volume * 100) / 100}
               displayType={'text'}
@@ -179,14 +179,14 @@ function Body(props) {
 
         {/* buttons end */}
         {/* table starts */}
-        <div class="table-responsive" data-aos="fade-up">
+        <div class="table-responsive  mb-5" data-aos="fade-up">
           <table className="table " >
             <thead>
               <tr>
                 <th className='pointer rounded-top align-middle' scope="col">#</th>
                 <th scope="col">Platform</th>
-                <th scope="col">Last Traded Price</th>
-                <th scope="col">Bid Percentage</th>
+                <th id="lastTrade"  scope="col"  style={{width:"30%"}}>Last Traded Price</th>
+                <th id="Bid" scope="col">Bid Percentage</th>
                 <th scope="col">Volume</th>
               </tr>
             </thead>
@@ -196,7 +196,7 @@ function Body(props) {
           </table>
         </div>
         <div id="mobile-footer" className="w-100" >
-          <div className="dropdown " style={{ display: "inline-block"  }}>
+          <div className="dropdown " style={{ display: "inline-block" }}>
             <button className="dropdown-toggle nav-link btn-coin" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style={{borderRadius:"10px",padding:"8px 15px 8px 15px"}}>
               {currency.results[props.index].abbr}
             </button>
@@ -204,7 +204,7 @@ function Body(props) {
               {displayCurrencies()}
             </div>
           </div>
-          <div className="dropdown ml-5" style={{ display: "inline-block" }}>
+          <div className="dropdown ml-3" style={{ display: "inline-block" }}>
             <button className="dropdown-toggle  nav-link btn-cryp" type="button" id="dropdownMenu" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style={{borderRadius:"10px",padding:"8px 15px 8px 15px"}}>
               {props.currentCrypto}
             </button>
@@ -214,7 +214,7 @@ function Body(props) {
           </div>
         </div>
 
-        <a className='telegram-fixed ' href="http://t.me/Luvfindingbot" target="_blank" rel="noreferrer" ><i className="tooltip" style={{ color: "white", backgroundColor: "#229ED9", fontSize: "18px" }} class="fab fa-telegram-plane" ></i></a>
+        <a className='telegram-fixed ' href="http://t.me/Luvfindingbot" target="_blank" rel="noreferrer" ><i className="tooltip" style={{ color: "white", backgroundColor: "#229ED9", fontSize: "22px" }} class="fab fa-telegram-plane" ></i></a>
       </div>
 
     );

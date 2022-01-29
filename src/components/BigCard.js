@@ -23,14 +23,7 @@ function BigCard(props) {
   };
   return (<div className="card pull-up mt-5 text-center" style={{ width: '100%' ,background:`url(${back})`}}>
     <div className="card-body ">
-      {/* <h5 className="card-title d-flex">
-        <img src={props.image} alt={props.symbol} width="30px" height="30px"></img>
-        <div style={{paddingLeft:"10px"}}>
-        <div style={{ fontWeight: "700" }}>{props.currentCrypto}/{props.symbol}</div>
-        <div style={{  fontSize: "14px"  ,color:"#787b86" }}>{cryptonames[props.currentCrypto]}/{currencyNames[props.symbol]}</div>
-        </div>
-        
-      </h5> */}
+    
       <h3 style={{color:"#ffa800"}}>{props.content}</h3>
       <h4 className="card-text" style={{    fontSize:"32px",fontWeight:"700"}}>{props.data} %</h4>
       

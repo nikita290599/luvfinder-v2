@@ -1,4 +1,5 @@
 
+
 document.addEventListener("DOMContentLoaded", function(){
     window.addEventListener('scroll', function() {
       let viewportWidth = window.innerWidth;
@@ -16,7 +17,21 @@ document.addEventListener("DOMContentLoaded", function(){
           document.body.style.paddingTop = '0';
         } 
         
+          if (window.innerWidth<680) {
+            document.getElementById('lastTrade').innerText="LTC";
+            document.getElementById('Bid').innerText="Bid %";
+          }
+          else{
+            document.getElementById('lastTrade').innerText="Last Traded Price";
+            document.getElementById('Bid').innerText="Bid Percentage";
+          
+          }
+        
     });
+   
+      
+
+   
  
     
   }); 

@@ -54,8 +54,8 @@ td{
   position: fixed;
   bottom: 15px;
   right: 15px;
-  width:30px;
-  height:30px;
+  width:35px;
+  height:35px;
   border-radius: 50%;
   padding:5px;
   background-color: #229ED9;
@@ -65,4 +65,22 @@ td{
   #mobile-footer{
     display:none;
   }
+  td{
+    font-size: 16px;
+   }
+}
+@media screen and (max-width: 500px){
+  .BID{
+    white-space: nowrap;
+    
+    font-size: 13px;
+  }
+  .LTC{
+    white-space: nowrap;
+    
+   
+  }
+ td{
+  font-size: 13px;
+ }
 }
