@@ -111,11 +111,11 @@ function Body(props) {
 
             <div className="container-fluid conta">
                 <div className="row" style={{padding:"0 14px 0 14px"}}>
-                    <div className="col-lg-8 col-md-7 col-xs-12 d-flex flex-column justify-content-center  align-items-left">
+                    <div data-aos="fade-right" className="col-lg-8 col-md-7 col-xs-12 d-flex flex-column justify-content-center  align-items-left">
                         <div className="h w-100 ">Top Memes Tokens by Market Capitalization</div>
                         <div className="small-heading">This page lists the top meme coins and tokens. These projects are listed by market capitalization with the largest first and then descending in order.</div>
                     </div>
-                    <div className="col-lg-4 col-md-5 col-xs-12">
+                    <div data-aos="fade-left" className="col-lg-4 col-md-5 col-xs-12">
                         <img src={shiba} width="100%" alt="BANNER"></img>
                     </div>
                 </div>
