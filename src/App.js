@@ -79,8 +79,8 @@ function App() {
   if (respData) {
     return (
       <div className='container-fluid'>
-        <Navbar updateCrypto={updateCrypto} currentCrypto={currentCrypto} cryptoExchanges={cryptoExchanges} currency={currency} setCurrency={setCurrency} index={index} setIndex={setIndex} respData={respData} />
-        <Body graphdata={graphdata} currentCrypto={currentCrypto} cryptoExchanges={cryptoExchanges} response={respData} index={index} updateResponse={updateResponse} />
+        <Navbar updateCrypto={updateCrypto} currentCrypto={currentCrypto} cryptoExchanges={cryptoExchanges} currency={currency} setCurrency={setCurrency} index={index} setIndex={setIndex}  />
+        <Body graphdata={graphdata} updateCrypto={updateCrypto} currentCrypto={currentCrypto} cryptoExchanges={cryptoExchanges} response={respData} index={index} setIndex={setIndex} updateResponse={updateResponse} currency={currency} setCurrency={setCurrency} />
 
       </div>
     );

@@ -2,7 +2,7 @@
 document.addEventListener("DOMContentLoaded", function(){
     window.addEventListener('scroll', function() {
       let viewportWidth = window.innerWidth;
-        if (window.scrollY > 50) {
+        if (window.scrollY > 50 && viewportWidth>768) {
           document.getElementById('navbar_top').classList.add('fixed-top');
           document.getElementById('navbar_top').classList.remove('pt-5');
           
@@ -15,5 +15,9 @@ document.addEventListener("DOMContentLoaded", function(){
            // remove padding top from body
           document.body.style.paddingTop = '0';
         } 
+        
     });
+ 
+    
   }); 
+

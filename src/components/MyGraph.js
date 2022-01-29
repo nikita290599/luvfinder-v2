@@ -10,10 +10,10 @@ export function MyGraph(props){
  
       
 if(props.graphdata){
-  return <div>yes</div>;
+  return <div>y</div>;
 }
 else{
-  return <div>Sorry</div>;
+  return <div>S</div>;
 }
 
 }

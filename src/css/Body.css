@@ -61,3 +61,8 @@ td{
   background-color: #229ED9;
 
 }
+@media screen and (min-width: 769px){
+  #mobile-footer{
+    display:none;
+  }
+}

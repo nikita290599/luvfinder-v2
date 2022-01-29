@@ -49,6 +49,15 @@ body{
   .nav-item{
     background-color: white;
 }
+#mobile-footer{
+  display:flex;
+  justify-content: center;
+  position:fixed;
+  bottom:0;
+  left:0;
+  background-color:#ffa800;
+  padding:10px 0 10px 0;
+}
 }
 
 

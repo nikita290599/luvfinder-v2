@@ -24,7 +24,25 @@
         "name": "Russian Ruble",
         "abbr": "RUB",
         "symbol": "₽"
+      },
+      {
+        "name": "CAKE",
+        "abbr": "CAKE",
+        "symbol": "CAKE"
+      }, {
+        "name": "BTC",
+        "abbr": "BTC",
+        "symbol": "BTC"
+      }, {
+        "name": "BNB",
+        "abbr": "BNB",
+        "symbol":"BNB"
+      }, {
+        "name": "ETH",
+        "abbr": "ETH",
+        "symbol": "ETH"
       }
+    
   
       
     ]

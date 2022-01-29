@@ -1,4 +1,5 @@
 import NumberFormat from "react-number-format";
+import currency from "../currency.json";
 import { useRef } from 'react';
 import BigCard from "./BigCard";
 import Card from "./Card";
@@ -43,163 +44,224 @@ import paws from "../images/paws.png"
 import "../css/Body.css"
 
 function Body(props) {
-    const chartRef = useRef();
-    const images = {
-        "Binance": logo1,
-        "Coinbase Exchange": logo2,
-        "FTX": logo3,
-        "Kraken": logo4,
-        "KuCoin": logo5,
-        "Huobi Global": logo6,
-        "Bitfinex": logo7,
-        "Gate.io": logo8,
-        "Crypto.com Exchange": logo9,
-        "Gemini": logo10,
-        "Bybit": logo11,
-        "Poloniex": logo12,
-        "MEXC": logo13,
-        "Bittrex": logo14,
-        "LBank": logo15,
-        "Blockchain.com": logo16,
-        "Okcoin": logo17,
-        "eToroX": logo18,
-        "WhiteBIT": logo19,
-        "Phemex": logo20,
-        "UniSwap": logo21,
-        "PancakeSwap": logo22,
-        "Upbit": logo23,
-        "Korbit": logo24,
-        "BKEX": logo25
+  const chartRef = useRef();
+  const images = {
+    "Binance": logo1,
+    "Coinbase Exchange": logo2,
+    "FTX": logo3,
+    "Kraken": logo4,
+    "KuCoin": logo5,
+    "Huobi Global": logo6,
+    "Bitfinex": logo7,
+    "Gate.io": logo8,
+    "Crypto.com Exchange": logo9,
+    "Gemini": logo10,
+    "Bybit": logo11,
+    "Poloniex": logo12,
+    "MEXC": logo13,
+    "Bittrex": logo14,
+    "LBank": logo15,
+    "Blockchain.com": logo16,
+    "Okcoin": logo17,
+    "eToroX": logo18,
+    "WhiteBIT": logo19,
+    "Phemex": logo20,
+    "UniSwap": logo21,
+    "PancakeSwap": logo22,
+    "Upbit": logo23,
+    "Korbit": logo24,
+    "BKEX": logo25
 
-    }
-    const cryptImg={
-        'DOGE':doge,'SHIB':shib,"MIM":mim, "SPELL":spell,"BABYDOGE":babydoge,"ELON":elon,"SAMO":samo,"CATE":cate,"HOGE":hoge,"DOBO":dobo 
-    }
-  
-    const render = () => {
+  }
+  const cryptImg = {
+    'DOGE': doge, 'SHIB': shib, "MIM": mim, "SPELL": spell, "BABYDOGE": babydoge, "ELON": elon, "SAMO": samo, "CATE": cate, "HOGE": hoge, "DOBO": dobo
+  }
+  function displayCurrencies() {
+    return currency.results.map((item, index) => {
+      return (
+
+        <div key={index} className="dropdown-item" onClick={() => { props.setCurrency(item.abbr); props.setIndex(index) }} >{item.abbr}</div>
+
+      )
+    })
+  }
+  // Function to display available meme coins
+  function displayCryptos() {
+    return props.cryptoExchanges.map((item, index) => {
+      return (
+
+        <div key={index} className="dropdown-item" onClick={() => { props.updateCrypto(item) }} >{item}</div>
+
+      )
+    })
+
+  }
+
+  const render = () => {
+    return (
+
+      props.response.maindata.map((item, index) => {
         return (
-
-            props.response.maindata.map((item, index) => {
-                return (
-                    <tr key={item.id}>
-                        <th scope="row">{index + 1}</th>
-                        <td ><img className='rounded-circle' src={images[item.name]} alt={"logo" + index} width="10%"></img><span style={{fontWeight:"600"}}>{item.name}</span></td>
-                        <td>{curr.results[props.index].symbol} {item.last_trade_price}</td>
-                        <td> {(item.bid_percentage)} %</td>
-                        <td><NumberFormat
-                            value={Math.round(item.volume * 100) / 100}
-                            displayType={'text'}
-                            prefix={curr.results[props.index].symbol + " "}
-                            thousandSeparator={true}
-                            renderText={(value, props) => <div {...props}>{value}</div>}
-                        /> </td>
+          <tr key={item.id}>
+            <th scope="row">{index + 1}</th>
+            <td ><img className='rounded-circle' src={images[item.name]} alt={"logo" + index} width="10%"></img><span style={{ fontWeight: "600" }}>{item.name}</span></td>
+            <td><span style={{ fontWeight: "600", marginRight: "5px" }}>{curr.results[props.index].symbol}</span> {item.last_trade_price}</td>
+            <td> {(item.bid_percentage)} %</td>
+            <td><span style={{ fontWeight: "600", marginRight: "5px" }}>{curr.results[props.index].symbol}</span><NumberFormat
+              value={Math.round(item.volume * 100) / 100}
+              displayType={'text'}
+              style={{ display: "inline" }}
+              thousandSeparator={true}
+              renderText={(value, props) => <div {...props}>{value}</div>}
+            /> </td>
 
 
 
-                    </tr>
+          </tr>
 
-                )
-            })
-        );
-    }
-    if ((props.response) && (props.graphdata) ) {
-        
-        return (
+        )
+      })
+    );
+  }
+  if ((props.response) && (props.graphdata)) {
 
-            <div className="container-fluid conta">
-                <div className="row" style={{padding:"0 14px 0 14px"}}>
-                    <div data-aos="fade-right" className="col-lg-8 col-md-7 col-xs-12 d-flex flex-column justify-content-center  align-items-left">
-                        <div className="h w-100 ">Top Memes Tokens by Market Capitalization</div>
-                        <div className="small-heading">This page lists the top meme coins and tokens. These projects are listed by market capitalization with the largest first and then descending in order.</div>
-                    </div>
-                    <div className="col-lg-4 col-md-5 col-xs-12">
-                        <img  data-aos="fade-left"  src={shiba} width="100%" alt="BANNER"></img>
-                    </div>
-                </div>
-                <div className="container-fluid">
-                <div className="row">
-                    <div className="col-lg-2 col-md-6 col-xs-12" data-aos="fade-up"><Card content={"Last 5 mins"} currentCrypto={props.currentCrypto} image={cryptImg[props.currentCrypto]}  symbol={curr.results[props.index].abbr} data= {props.response.previousdata.last5Mins}  /></div>
-                    <div className="col-lg-2 col-md-6 col-xs-12" data-aos="fade-up"><Card content={"Last 1 hour"} currentCrypto={props.currentCrypto} image={cryptImg[props.currentCrypto]} symbol={curr.results[props.index].abbr} data={props.response.previousdata.last1Hour}  /></div>
-                    <div id="market" className="col-lg-3 col-md-12 col-xs-12 m-auto" data-aos="fade-up"><BigCard content={"Best Price to Trade"} currentCrypto={props.currentCrypto} image={cryptImg[props.currentCrypto]} symbol={curr.results[props.index].abbr} data={Math.round(props.response.previousdata.avg_trage * 10000000000) /10000000000}/></div>
-                    <div className="col-lg-2 col-md-6 col-xs-12" data-aos="fade-up"><Card content={"Last 1 Day"} currentCrypto={props.currentCrypto} image={cryptImg[props.currentCrypto]} symbol={curr.results[props.index].abbr} data={props.response.previousdata.last24Hours}/></div>
-                    <div className="col-lg-2 col-md-6 col-xs-12" data-aos="fade-up"><Card content={"Last 7 Days"} currentCrypto={props.currentCrypto} image={cryptImg[props.currentCrypto]} symbol={curr.results[props.index].abbr} data={props.response.previousdata.last7Days}/></div>
-                   
-                </div>
-                
-            
-                </div>
-               
-        <div  className="row justify-content-center" style={{paddingTop:"100px"}}>
-				<div className="col-lg-7 col-12 text-center" data-aos="fade-up">
-					<h1 className="mb-15"  style={{color:"#172b4c", fontWeight:"500"}}>Market Live</h1>					
-					<hr className="w-100 yellowline"/>
-				</div>
-			</div>
+    return (
 
-                {/* table starts */}
-                <div class="table-responsive" data-aos="fade-up">
-                <table className="table mt-5" >
-                    <thead>
-                    <tr>
-                                <th className='pointer rounded-top align-middle' scope="col">#</th>
-                                <th scope="col">Platform</th>
-                                <th scope="col">Last Traded Price</th>
-                                <th scope="col">Bid Percentage</th>
-                                <th scope="col">Volume</th>
-                            </tr>
-                    </thead>
-                    <tbody>
-                    {render()}
-                    </tbody>
-                </table>
-                </div>
-                
-                <a className='telegram-fixed ' href="http://t.me/Luvfindingbot" target="_blank" rel="noreferrer" ><i className="tooltip" style={{color:"white",backgroundColor:"#229ED9", fontSize:"18px"}} class="fab fa-telegram-plane" ></i></a>
+      <div className="container-fluid conta">
+        <div className="row" style={{ padding: "0 14px 0 14px" }}>
+          <div data-aos="fade-right" className="col-lg-8 col-md-7 col-xs-12 d-flex flex-column justify-content-center  align-items-left">
+            <div className="h w-100 ">Top Memes Tokens by Market Capitalization</div>
+            <div className="small-heading">This page lists the top meme coins and tokens. These projects are listed by market capitalization with the largest first and then descending in order.</div>
+          </div>
+          <div className="col-lg-4 col-md-5 col-xs-12">
+            <img data-aos="fade-left" src={shiba} width="100%" alt="BANNER"></img>
+          </div>
+        </div>
+        <div className="container-fluid">
+          <div className="row">
+            <div className="col-lg-2 col-md-6 col-xs-12" data-aos="fade-up"><Card content={"Last 5 mins"} currentCrypto={props.currentCrypto} image={cryptImg[props.currentCrypto]} symbol={curr.results[props.index].abbr} data={props.response.previousdata.last5Mins} /></div>
+            <div className="col-lg-2 col-md-6 col-xs-12" data-aos="fade-up"><Card content={"Last 1 hour"} currentCrypto={props.currentCrypto} image={cryptImg[props.currentCrypto]} symbol={curr.results[props.index].abbr} data={props.response.previousdata.last1Hour} /></div>
+            <div id="market" className="col-lg-3 col-md-12 col-xs-12 m-auto" data-aos="fade-up"><BigCard content={"Best Price to Trade"} currentCrypto={props.currentCrypto} image={cryptImg[props.currentCrypto]} symbol={curr.results[props.index].abbr} data={Math.round(props.response.previousdata.avg_trage * 10000000000) / 10000000000} /></div>
+            <div className="col-lg-2 col-md-6 col-xs-12" data-aos="fade-up"><Card content={"Last 1 Day"} currentCrypto={props.currentCrypto} image={cryptImg[props.currentCrypto]} symbol={curr.results[props.index].abbr} data={props.response.previousdata.last24Hours} /></div>
+            <div className="col-lg-2 col-md-6 col-xs-12" data-aos="fade-up"><Card content={"Last 7 Days"} currentCrypto={props.currentCrypto} image={cryptImg[props.currentCrypto]} symbol={curr.results[props.index].abbr} data={props.response.previousdata.last7Days} /></div>
+
+          </div>
+
+
+        </div>
+
+        <div className="row justify-content-center" style={{ paddingTop: "100px" }}>
+          <div className="col-lg-7 col-12 text-center" data-aos="fade-up">
+            <h1 className="mb-15" style={{ color: "#172b4c", fontWeight: "500" }}>Market Live</h1>
+            <hr className="w-100 yellowline" />
+          </div>
+        </div>
+
+        {/* buttons */}
+
+        <div className="dropdown nav-item" style={{ display: "inline-block" }}>
+          <button className="dropdown-toggle nav-link btn-coin" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            {currency.results[props.index].abbr}
+          </button>
+          <div className="dropdown-menu" style={{ backgroundColor: "white" }} aria-labelledby="dropdownMenuButton">
+            {displayCurrencies()}
+          </div>
+        </div>
+        <div className="dropdown nav-item" style={{ display: "inline-block" }}>
+          <button className="dropdown-toggle  nav-link btn-cryp" type="button" id="dropdownMenu" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            {props.currentCrypto}
+          </button>
+          <div className="dropdown-menu " style={{ backgroundColor: "white" }} aria-labelledby="dropdownMenu">
+            {displayCryptos()}
+          </div>
+        </div>
+
+
+        {/* buttons end */}
+        {/* table starts */}
+        <div class="table-responsive" data-aos="fade-up">
+          <table className="table " >
+            <thead>
+              <tr>
+                <th className='pointer rounded-top align-middle' scope="col">#</th>
+                <th scope="col">Platform</th>
+                <th scope="col">Last Traded Price</th>
+                <th scope="col">Bid Percentage</th>
+                <th scope="col">Volume</th>
+              </tr>
+            </thead>
+            <tbody>
+              {render()}
+            </tbody>
+          </table>
+        </div>
+        <div id="mobile-footer" className="w-100" >
+          <div className="dropdown " style={{ display: "inline-block"  }}>
+            <button className="dropdown-toggle nav-link btn-coin" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style={{borderRadius:"10px",padding:"8px 15px 8px 15px"}}>
+              {currency.results[props.index].abbr}
+            </button>
+            <div className="dropdown-menu" style={{ backgroundColor: "white" }} aria-labelledby="dropdownMenuButton">
+              {displayCurrencies()}
             </div>
- 
-        );
-    }
-    else {
-        return (<div className="w-100 d-flex justify-content-center ">
-         <div className="main">
-    <span className="stand"></span>
-    <div className="cat">
-     <div className="body"></div>
-     <div className="head">
-       <div className="ear"></div>
-     <div className="ear"></div>
-     </div>
-     <div className="face">
-      <div className="nose"></div>
-     <div className="whisker-container">
-       <div className="whisker"></div>
-       <div className="whisker"></div>
-     </div>
-     <div className="whisker-container">
-       <div className="whisker"></div>
-       <div className="whisker"></div>
-     </div>
-     </div>
-     <div className="tail-container">
-      <div className="tail">
-        <div className="tail">
-          <div className="tail">
+          </div>
+          <div className="dropdown ml-5" style={{ display: "inline-block" }}>
+            <button className="dropdown-toggle  nav-link btn-cryp" type="button" id="dropdownMenu" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style={{borderRadius:"10px",padding:"8px 15px 8px 15px"}}>
+              {props.currentCrypto}
+            </button>
+            <div className="dropdown-menu " style={{ backgroundColor: "white" }} aria-labelledby="dropdownMenu">
+              {displayCryptos()}
+            </div>
+          </div>
+        </div>
+
+        <a className='telegram-fixed ' href="http://t.me/Luvfindingbot" target="_blank" rel="noreferrer" ><i className="tooltip" style={{ color: "white", backgroundColor: "#229ED9", fontSize: "18px" }} class="fab fa-telegram-plane" ></i></a>
+      </div>
+
+    );
+  }
+  else {
+    return (<div className="w-100 d-flex justify-content-center ">
+      <div className="main">
+        <span className="stand"></span>
+        <div className="cat">
+          <div className="body"></div>
+          <div className="head">
+            <div className="ear"></div>
+            <div className="ear"></div>
+          </div>
+          <div className="face">
+            <div className="nose"></div>
+            <div className="whisker-container">
+              <div className="whisker"></div>
+              <div className="whisker"></div>
+            </div>
+            <div className="whisker-container">
+              <div className="whisker"></div>
+              <div className="whisker"></div>
+            </div>
+          </div>
+          <div className="tail-container">
             <div className="tail">
               <div className="tail">
                 <div className="tail">
-                  <div className="tail"></div>
+                  <div className="tail">
+                    <div className="tail">
+                      <div className="tail">
+                        <div className="tail"></div>
+                      </div>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
         </div>
       </div>
-     </div>
-   </div>
-</div>
-   
-        </div>)
-    }
+
+
+
+    </div>)
+  }
 
 
 }
