@@ -1,5 +1,6 @@
 
 import "../App.css"
+import g from "../images/GRAPH.png"
 function Card(props) {
   const cryptonames = {
     "DOGE": "Dogecoin",
@@ -33,7 +34,7 @@ function Card(props) {
       <h4 className="card-text" style={{    fontSize:"28px",fontWeight:"700"}}>{props.data} %</h4>
       <h6 style={{color:"#ffa800"}}>{props.content}</h6>
 
-      <div style={{ width: "100%" }}></div>
+      <div className="card-text" style={{ width: "100%", height:"10px"}}><img width="100%" src={g} alt="graph" height="30px"></img></div>
     </div>
   </div>);
 
