@@ -11,6 +11,19 @@ body{
   box-shadow: 0 14px 24px rgb(0 0 0 / 20%);
   z-index:399;
 }
+body::-webkit-scrollbar {
+  width: 0.5em;
+}
+ 
+body::-webkit-scrollbar-track:vertical  {
+  box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+}
+ 
+body::-webkit-scrollbar-thumb:vertical  {
+  background-color: #ffcf8c;
+  outline: 1px solid white;
+  border-radius: 10px;
+}
 .pull-up{
   -webkit-transition: all .25s ease;
   -o-transition: all .25s ease;

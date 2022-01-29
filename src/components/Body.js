@@ -154,7 +154,7 @@ function Body(props) {
                 </table>
                 </div>
                 
-             
+                <a className='telegram-fixed ' href="http://t.me/Luvfindingbot" target="_blank" rel="noreferrer" ><i className="tooltip" style={{color:"white",backgroundColor:"#229ED9", fontSize:"18px"}} class="fab fa-telegram-plane" ></i></a>
             </div>
  
         );
