@@ -111,9 +111,9 @@ function App() {
     );
   }
   else {
-    return (<div className="w-100  d-flex justify-content-center  " style={{height:"100vh",marginTop:"25vh"}}>
+    return (<div className="w-100  d-flex justify-content-center  " style={{height:"100vh",backgroundColor:"#FFD580"}}>
       <div class="con d-flex justify-content-center align-middle">
-        <div class="corgi">
+        <div class="corgi" style={{marginTop:"27vh"}}>
 
           <div class="head">
             <div class="ear ear--r"></div>
