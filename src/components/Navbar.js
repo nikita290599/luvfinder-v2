@@ -56,7 +56,7 @@ function Navbar(props) {
                     </div>
                     <li className="nav-item mr-0 " style={{   backgroundColor:"#229ED9",borderRadius: "7px",marginLeft: "6px",color:"white"}}>
 
-                        <a className='btn ' href="https://twitter.com/LuvInuCoin" target="_blank" rel="noreferrer" style={{color:"white",width:"auto"}}>CONNECT <i style={{color:"blue"}} class="fab fa-telegram-plane" ></i></a>
+                        <a className='btn ' href="https://twitter.com/LuvInuCoin" target="_blank" rel="noreferrer" style={{color:"white",width:"auto"}}>CONNECT <i style={{color:"white"}} class="fab fa-telegram-plane" ></i></a>
                     </li>
 
                 </ul>
