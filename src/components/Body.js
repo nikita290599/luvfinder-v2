@@ -112,8 +112,8 @@ function Body(props) {
                         <div className="h w-100 ">Top Memes Tokens by Market Capitalization</div>
                         <div className="small-heading">This page lists the top meme coins and tokens. These projects are listed by market capitalization with the largest first and then descending in order.</div>
                     </div>
-                    <div data-aos="fade-left" className="col-lg-4 col-md-5 col-xs-12">
-                        <img src={shiba} width="100%" alt="BANNER"></img>
+                    <div className="col-lg-4 col-md-5 col-xs-12">
+                        <img  data-aos="fade-left"  src={shiba} width="100%" alt="BANNER"></img>
                     </div>
                 </div>
                 <div className="container-fluid">
