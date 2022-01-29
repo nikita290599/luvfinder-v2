@@ -22,6 +22,11 @@ nav {
     color:#ffa800;
     font-weight: 700;
 }
+.brand:hover{
+    
+    color:#ffa800;
+    
+}
 .nav-link{
     font-family: 'IBM Plex Sans', sans-serif; 
     color:black;

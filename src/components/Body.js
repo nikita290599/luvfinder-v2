@@ -126,13 +126,13 @@ function Body(props) {
                     
                     <div className="col-lg-3 col-md-6 col-xs-1" data-aos="fade-up"><Card content={"Last 1 Day"} currentCrypto={props.currentCrypto} image={cryptImg[props.currentCrypto]} symbol={curr.results[props.index].abbr} data={props.response.previousdata.last24Hours}/></div>
                     <div className="col-lg-3 col-md-6 col-xs-1" data-aos="fade-up"><Card content={"Last 7 Days"} currentCrypto={props.currentCrypto} image={cryptImg[props.currentCrypto]} symbol={curr.results[props.index].abbr} data={props.response.previousdata.last7Days}/></div>
-                    <div className="col-lg-6 col-md-6 col-xs-1 m-auto" data-aos="fade-up"><BigCard content={"Best Price to Trade"} currentCrypto={props.currentCrypto} image={cryptImg[props.currentCrypto]} symbol={curr.results[props.index].abbr} data={Math.round(props.response.previousdata.avg_trage * 10000000000) /10000000000}/></div>
+                    <div id="market" className="col-lg-6 col-md-6 col-xs-1 m-auto" data-aos="fade-up"><BigCard content={"Best Price to Trade"} currentCrypto={props.currentCrypto} image={cryptImg[props.currentCrypto]} symbol={curr.results[props.index].abbr} data={Math.round(props.response.previousdata.avg_trage * 10000000000) /10000000000}/></div>
                 </div>
                 
             
                 </div>
                
-        <div className="row justify-content-center" style={{paddingTop:"100px"}}>
+        <div  className="row justify-content-center" style={{paddingTop:"100px"}}>
 				<div className="col-lg-7 col-12 text-center" data-aos="fade-up">
 					<h1 className="mb-15"  style={{color:"#172b4c", fontWeight:"500"}}>Market Live</h1>					
 					<hr className="w-100 yellowline"/>

@@ -63,15 +63,15 @@ function App() {
     return () => clearInterval(timerId);
   });
 
-  // // CALLING AFTER EVERY 1 MIN 
-  // useEffect(()=>{
-  //   async function onSearchSubmit() {
+  // CALLING AFTER EVERY 1 MIN 
+  useEffect(()=>{
+    async function onSearchSubmit() {
 
-  //     const response =await axios.get(url);
-  //     updateResponse(response.data.result[0]);
-  //   }
-  //   onSearchSubmit();
-  // },[bool])
+      const response =await axios.get(url);
+      updateResponse(response.data.result[0]);
+    }
+    onSearchSubmit();
+  },[bool])
 
 
 
@@ -100,59 +100,75 @@ function App() {
     }
     onSubmit();
   }, [currentCrypto, currency]);
-  
-  if(respData){
+
+  if (respData) {
     return (
       <div className='container-fluid'>
         <Navbar updateCrypto={updateCrypto} currentCrypto={currentCrypto} cryptoExchanges={cryptoExchanges} currency={currency} setCurrency={setCurrency} index={index} setIndex={setIndex} respData={respData} />
         <Body graphdata={graphdata} currentCrypto={currentCrypto} cryptoExchanges={cryptoExchanges} response={respData} index={index} updateResponse={updateResponse} />
-  
+
       </div>
     );
   }
   else {
-    return (<div className="w-100 d-flex justify-content-center ">
-     <div className="main">
-<span className="stand"></span>
-<div className="cat">
- <div className="body"></div>
- <div className="head">
-   <div className="ear"></div>
- <div className="ear"></div>
- </div>
- <div className="face">
-  <div className="nose"></div>
- <div className="whisker-container">
-   <div className="whisker"></div>
-   <div className="whisker"></div>
- </div>
- <div className="whisker-container">
-   <div className="whisker"></div>
-   <div className="whisker"></div>
- </div>
- </div>
- <div className="tail-container">
-  <div className="tail">
-    <div className="tail">
-      <div className="tail">
-        <div className="tail">
-          <div className="tail">
-            <div className="tail">
-              <div className="tail"></div>
+    return (<div className="w-100  d-flex justify-content-center  " style={{height:"100vh",marginTop:"25vh"}}>
+      <div class="con d-flex justify-content-center align-middle">
+        <div class="corgi">
+
+          <div class="head">
+            <div class="ear ear--r"></div>
+            <div class="ear ear--l"></div>
+
+            <div class="eye eye--left"></div>
+            <div class="eye eye--right"></div>
+
+            <div class="face">
+              <div class="face__white">
+                <div class=" face__orange face__orange--l"></div>
+                <div class=" face__orange face__orange--r"></div>
+              </div>
+            </div>
+
+            <div class="face__curve"></div>
+
+            <div class="mouth">
+
+              <div class="nose"></div>
+              <div class="mouth__left">
+                <div class="mouth__left--round"></div>
+                <div class="mouth__left--sharp"></div>
+              </div>
+
+              <div class="lowerjaw">
+                <div class="lips"></div>
+                <div class="tongue test"></div>
+              </div>
+
+              <div class="snout"></div>
             </div>
           </div>
-        </div>
-      </div>
-    </div>
-  </div>
- </div>
-</div>
-</div>
 
+          <div class="neck__back"></div>
+          <div class="neck__front"></div>
+
+          <div class="body">
+            <div class="body__chest"></div>
+          </div>
+
+          <div class="foot foot__left foot__front foot__1"></div>
+          <div class="foot foot__right foot__front foot__2"></div>
+          <div class="foot foot__left foot__back foot__3"></div>
+          <div class="foot foot__right foot__back foot__4"></div>
+
+          <div class="tail test"></div>
+        </div>
+
+
+      </div>
     </div>)
-}
-  
- 
+  }
+
+
 }
 
 export default App;
