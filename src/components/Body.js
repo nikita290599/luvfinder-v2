@@ -179,7 +179,9 @@ function Body(props) {
           <div className="col-lg-4 col-md-4 col-xs-12" data-aos="fade-up">
             <div className="card pull-up mt-5 " style={{ width: '100%' }}>
                <div className="card-body ">
-              <h5 className="card-title d-flex ">
+             
+                <h3 style={{ color: "#ffa800" }}> Best place to sell at:</h3>
+                <h5 className="card-title d-flex ">
                 <img src={images[props.response.maindata[props.response.maindata.length-1].name]} alt={""} width="30px" height="30px"></img>
                 <div style={{ paddingLeft: "10px" ,textAlign:"left" }}>
                   <div style={{ fontWeight: "700", fontSize: "1rem" }}>{props.response.maindata[props.response.maindata.length-1].name}</div>
@@ -187,35 +189,19 @@ function Body(props) {
                 </div>
 
               </h5>
-                <h3 style={{ color: "#ffa800" }}> Best place to sell at:</h3>
-                <h4 className="card-text" style={{ fontSize: "32px", fontWeight: "700" }}>{props.response.maindata[props.response.maindata.length-1].last_trade_price}</h4>
+                <h4 className="card-text" style={{ fontSize: "25px", fontWeight: "700",whiteSpace:'nowrap' }}>{curr.results[props.index].symbol} {props.response.maindata[props.response.maindata.length-1].last_trade_price}</h4>
                
               </div>
             </div>
           </div>
 
-          <div className="col-lg-4 col-md-4 col-xs-12" data-aos="fade-up">
-          <div className="card pull-up mt-5 " style={{ width: '100%' }}>
-               <div className="card-body ">
-              <h5 className="card-title d-flex">
-                <img src={cryptImg[props.currentCrypto]} alt={""} width="30px" height="30px"></img>
-                <div style={{ paddingLeft: "10px",textAlign:"left" }}>
-                  <div style={{ fontWeight: "700", fontSize: "1rem" }}>{props.currentCrypto}/{props.currency}</div>
-                  <div style={{ fontSize: "14px", color: "#787b86" }}>{cryptonames[props.currentCrypto]}/{currencyNames[props.currency]}</div>
-                </div>
-
-              </h5>
-                <h4 style={{ color: "#ffa800" }}> The profit you earn at 1 {props.currentCrypto} Coin</h4>
-                <h4 className="card-text" style={{ fontSize: "32px", fontWeight: "700" }}>{props.response.maindata[props.response.maindata.length-1].last_trade_price-props.response.maindata[0].last_trade_price}</h4>
-                
-              </div>
-            </div>
-          </div>
-
+          
           <div className="col-lg-4 col-md-4 col-xs-12" data-aos="fade-up">
           <div className="card pull-up mt-5" style={{ width: '100%' }}>
                <div className="card-body ">
-              <h5 className="card-title d-flex">
+              
+                <h3 style={{ color: "#ffa800" }}> Best place to purchase at:</h3>
+                <h5 className="card-title d-flex">
                 <img src={images[props.response.maindata[0].name]} alt={""} width="30px" height="30px"></img>
                 <div style={{ paddingLeft: "10px",textAlign:"left" }}>
                   <div style={{ fontWeight: "700", fontSize: "1rem" }}>{props.response.maindata[0].name}</div>
@@ -223,11 +209,30 @@ function Body(props) {
                 </div>
 
               </h5>
-                <h3 style={{ color: "#ffa800" }}> Best place to purchase at:</h3>
-                <h4 className="card-text" style={{ fontSize: "32px", fontWeight: "700" }}>{props.response.maindata[0].last_trade_price}</h4>
+                <h4 className="card-text" style={{ fontSize: "25px", fontWeight: "700",whiteSpace:'nowrap' }}>{curr.results[props.index].symbol} {props.response.maindata[0].last_trade_price}</h4>
               </div>
             </div>
           </div>
+
+          <div className="col-lg-4 col-md-4 col-xs-12" data-aos="fade-up">
+          <div className="card pull-up mt-5 " style={{ width: '100%' }}>
+               <div className="card-body ">
+              
+                <h5 style={{ color: "#ffa800" ,fontSize:"22px"}}> The profit you earn at 1 {props.currentCrypto} Coin</h5>
+                <h5 className="card-title d-flex">
+                <img src={cryptImg[props.currentCrypto]} alt={""} width="30px" height="30px"></img>
+                <div style={{ paddingLeft: "10px",textAlign:"left" }}>
+                  <div style={{ fontWeight: "700", fontSize: "1rem" }}>{props.currentCrypto}/{props.currency}</div>
+                  <div style={{ fontSize: "14px", color: "#787b86" }}>{cryptonames[props.currentCrypto]}/{currencyNames[props.currency]}</div>
+                </div>
+
+              </h5>
+                <h4 className="card-text" style={{ fontSize: "25px", fontWeight: "700",whiteSpace:'nowrap' }}>{curr.results[props.index].symbol} {props.response.maindata[props.response.maindata.length-1].last_trade_price-props.response.maindata[0].last_trade_price}</h4>
+                
+              </div>
+            </div>
+          </div>
+
 
 
         </div>
