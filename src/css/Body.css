@@ -72,7 +72,6 @@ td{
 @media screen and (max-width: 500px){
   .BID{
     white-space: nowrap;
-    
     font-size: 13px;
   }
   .LTC{

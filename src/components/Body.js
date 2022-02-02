@@ -1,6 +1,6 @@
 import NumberFormat from "react-number-format";
 import currency from "../currency.json";
-import { useRef } from 'react';
+import { useRef, useState, useEffect } from 'react';
 import BigCard from "./BigCard";
 import Card from "./Card";
 import shiba from "../images/min.png";
@@ -45,6 +45,8 @@ import "../css/Body.css"
 
 function Body(props) {
   const chartRef = useRef();
+
+
   const images = {
     "Binance": logo1,
     "Coinbase Exchange": logo2,
@@ -73,6 +75,25 @@ function Body(props) {
     "BKEX": logo25
 
   }
+  const cryptonames = {
+    "DOGE": "Dogecoin",
+    "SHIB": "Shiba-inu",
+    "MIM": "Magic Internet-money",
+    "SPELL": "Spell token",
+    "BABYDOGE": "Babydoge-coin",
+    "ELON": "Dogelon-mars",
+    "SAMO": "Samoyedcoin",
+    "CATE": "Catecoin",
+    "HOGE": "Hoge-finance",
+    "DOBO": "Dogebonk"
+  }
+  const currencyNames = {
+    "USD": "U.S. Dollar",
+    "INR": "Indian Rupees",
+    "JPY": "Japanese Yen",
+    "EUR": "European Union",
+    "RUB": "Russian Ruble"
+  };
   const cryptImg = {
     'DOGE': doge, 'SHIB': shib, "MIM": mim, "SPELL": spell, "BABYDOGE": babydoge, "ELON": elon, "SAMO": samo, "CATE": cate, "HOGE": hoge, "DOBO": dobo
   }
@@ -85,6 +106,7 @@ function Body(props) {
       )
     })
   }
+
   // Function to display available meme coins
   function displayCryptos() {
     return props.cryptoExchanges.map((item, index) => {
@@ -96,6 +118,8 @@ function Body(props) {
     })
 
   }
+
+
 
   const render = () => {
     return (
@@ -150,11 +174,63 @@ function Body(props) {
 
         </div>
 
-        <div className="row justify-content-center" style={{ paddingTop: "100px" }}>
-          <div className="col-lg-7 col-12 text-center" data-aos="fade-up">
-            <h1 className="mb-15" style={{ color: "#172b4c", fontWeight: "500" }}>Market Live</h1>
-            <hr className="w-100 yellowline" />
+        <div className="row justify-content-center" style={{ paddingTop: "40px",paddingBottom:"50px" }}>
+
+          <div className="col-lg-4 col-md-4 col-xs-12" data-aos="fade-up">
+            <div className="card pull-up mt-5 text-center" style={{ width: '100%' }}>
+               <div className="card-body ">
+              <h5 className="card-title d-flex ">
+                <img src={images[props.response.maindata[props.response.maindata.length-1].name]} alt={""} width="30px" height="30px"></img>
+                <div style={{ paddingLeft: "10px" ,textAlign:"left" }}>
+                  <div style={{ fontWeight: "700", fontSize: "1rem" }}>{props.response.maindata[props.response.maindata.length-1].name}</div>
+                  <div style={{ fontSize: "14px", color: "#787b86" }}>{cryptonames[props.currentCrypto]}/{currencyNames[props.currency]}</div>
+                </div>
+
+              </h5>
+                <h3 style={{ color: "#ffa800" }}> Best place to sell at:</h3>
+                <h4 className="card-text" style={{ fontSize: "32px", fontWeight: "700" }}>{props.response.maindata[props.response.maindata.length-1].last_trade_price}</h4>
+                <div style={{ fontSize: "14px", color: "#787b86" }}>Average {props.currentCrypto}/{props.symbol}  net price including commission</div>
+              </div>
+            </div>
           </div>
+
+          <div className="col-lg-4 col-md-4 col-xs-12" data-aos="fade-up">
+          <div className="card pull-up mt-5 text-center" style={{ width: '100%' }}>
+               <div className="card-body ">
+              <h5 className="card-title d-flex">
+                <img src={cryptImg[props.currentCrypto]} alt={""} width="30px" height="30px"></img>
+                <div style={{ paddingLeft: "10px",textAlign:"left" }}>
+                  <div style={{ fontWeight: "700", fontSize: "1rem" }}>{props.currentCrypto}/{props.currency}</div>
+                  <div style={{ fontSize: "14px", color: "#787b86" }}>{cryptonames[props.currentCrypto]}/{currencyNames[props.currency]}</div>
+                </div>
+
+              </h5>
+                <h4 style={{ color: "#ffa800" }}> The profit you earn at 1 {props.currentCrypto} Coin</h4>
+                <h4 className="card-text" style={{ fontSize: "32px", fontWeight: "700" }}>{props.response.maindata[props.response.maindata.length-1].last_trade_price-props.response.maindata[0].last_trade_price}</h4>
+                <div style={{ fontSize: "14px", color: "#787b86" }}>Average {props.currentCrypto}/{props.symbol}  net price including commission</div>
+              </div>
+            </div>
+          </div>
+
+          <div className="col-lg-4 col-md-4 col-xs-12" data-aos="fade-up">
+          <div className="card pull-up mt-5 text-center" style={{ width: '100%' }}>
+               <div className="card-body ">
+              <h5 className="card-title d-flex">
+                <img src={images[props.response.maindata[0].name]} alt={""} width="30px" height="30px"></img>
+                <div style={{ paddingLeft: "10px",textAlign:"left" }}>
+                  <div style={{ fontWeight: "700", fontSize: "1rem" }}>{props.response.maindata[0].name}</div>
+                  <div style={{ fontSize: "14px", color: "#787b86" }}>{cryptonames[props.currentCrypto]}/{currencyNames[props.currency]}</div>
+                </div>
+
+              </h5>
+                <h3 style={{ color: "#ffa800" }}> Best place to purchase at:</h3>
+                <h4 className="card-text" style={{ fontSize: "32px", fontWeight: "700" }}>{props.response.maindata[0].last_trade_price}</h4>
+                <div style={{ fontSize: "14px", color: "#787b86" }}>Average {props.currentCrypto}/{props.symbol}  net price including commission</div>
+              </div>
+            </div>
+          </div>
+
+
         </div>
 
         {/* buttons */}
@@ -179,13 +255,13 @@ function Body(props) {
 
         {/* buttons end */}
         {/* table starts */}
-        <div class="table-responsive  mb-5" data-aos="fade-up">
+        <div className="table-responsive  mb-5" data-aos="fade-up">
           <table className="table " >
             <thead>
               <tr>
                 <th className='pointer rounded-top align-middle' scope="col">#</th>
                 <th scope="col">Platform</th>
-                <th id="lastTrade"  scope="col"  style={{width:"30%"}}>Last Traded Price</th>
+                <th id="lastTrade" scope="col" style={{ width: "30%" }}>Last Traded Price</th>
                 <th id="Bid" scope="col">Bid Percentage</th>
                 <th scope="col">Volume</th>
               </tr>
@@ -197,7 +273,7 @@ function Body(props) {
         </div>
         <div id="mobile-footer" className="w-100" >
           <div className="dropdown " style={{ display: "inline-block" }}>
-            <button className="dropdown-toggle nav-link btn-coin" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style={{borderRadius:"10px",padding:"8px 15px 8px 15px"}}>
+            <button className="dropdown-toggle nav-link btn-coin" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style={{ borderRadius: "10px", padding: "8px 15px 8px 15px" }}>
               {currency.results[props.index].abbr}
             </button>
             <div className="dropdown-menu" style={{ backgroundColor: "white" }} aria-labelledby="dropdownMenuButton">
@@ -205,7 +281,7 @@ function Body(props) {
             </div>
           </div>
           <div className="dropdown ml-3" style={{ display: "inline-block" }}>
-            <button className="dropdown-toggle  nav-link btn-cryp" type="button" id="dropdownMenu" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style={{borderRadius:"10px",padding:"8px 15px 8px 15px"}}>
+            <button className="dropdown-toggle  nav-link btn-cryp" type="button" id="dropdownMenu" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style={{ borderRadius: "10px", padding: "8px 15px 8px 15px" }}>
               {props.currentCrypto}
             </button>
             <div className="dropdown-menu " style={{ backgroundColor: "white" }} aria-labelledby="dropdownMenu">
@@ -214,49 +290,14 @@ function Body(props) {
           </div>
         </div>
 
-        <a className='telegram-fixed ' href="http://t.me/Luvfindingbot" target="_blank" rel="noreferrer" ><i className="tooltip" style={{ color: "white", backgroundColor: "#229ED9", fontSize: "22px" }} class="fab fa-telegram-plane" ></i></a>
+        <a className='telegram-fixed ' href="http://t.me/Luvfindingbot" target="_blank" rel="noreferrer" ><i className="tooltip" style={{ color: "white", backgroundColor: "#229ED9", fontSize: "22px" }} className="fab fa-telegram-plane" ></i></a>
       </div>
 
     );
   }
   else {
     return (<div className="w-100 d-flex justify-content-center ">
-      <div className="main">
-        <span className="stand"></span>
-        <div className="cat">
-          <div className="body"></div>
-          <div className="head">
-            <div className="ear"></div>
-            <div className="ear"></div>
-          </div>
-          <div className="face">
-            <div className="nose"></div>
-            <div className="whisker-container">
-              <div className="whisker"></div>
-              <div className="whisker"></div>
-            </div>
-            <div className="whisker-container">
-              <div className="whisker"></div>
-              <div className="whisker"></div>
-            </div>
-          </div>
-          <div className="tail-container">
-            <div className="tail">
-              <div className="tail">
-                <div className="tail">
-                  <div className="tail">
-                    <div className="tail">
-                      <div className="tail">
-                        <div className="tail"></div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
+      hello
 
 
 

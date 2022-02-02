@@ -17,6 +17,12 @@ function App() {
   const [sec, setSec] = useState(56);
 
   const [graphdata, setGraph] = useState(null);
+  const [mintrade,setMinTrade]=useState(0);
+  const [mintradeIndex,setMinTradeIndex]=useState(0);
+  const [maxtrade,setMaxTrade]=useState(0);
+  const [maxtradeIndex,setMaxTradeIndex]=useState(0);
+  
+  
 
   // MOUNTING
   useEffect(() => {
@@ -31,6 +37,12 @@ function App() {
     }
     onSearchSubmit();
   }, [])
+  useEffect(()=>{
+    if(respData){
+      respData.maindata.sort((a, b) => (a.last_trade_price > b.last_trade_price) ? 1 : -1)
+     
+    }
+   },[respData])
 
  
   // Timer logic
@@ -56,7 +68,7 @@ function App() {
 
       const response =await axios.get(url);
       updateResponse(response.data.result[0]);
-    
+     
     }
     onSearchSubmit();
   },[bool])
@@ -70,7 +82,7 @@ function App() {
       updateResponse(response.data.result[0]);
       const res = await axios.get(`https://luvfinder.luvinu.io/api/coinMarket/${currentCrypto}`);
       setGraph(res.data.result[0]);
-      console.log("infinite")
+      
   
     }
     onSubmit();
@@ -80,62 +92,62 @@ function App() {
     return (
       <div className='container-fluid'>
         <Navbar updateCrypto={updateCrypto} currentCrypto={currentCrypto} cryptoExchanges={cryptoExchanges} currency={currency} setCurrency={setCurrency} index={index} setIndex={setIndex}  />
-        <Body graphdata={graphdata} updateCrypto={updateCrypto} currentCrypto={currentCrypto} cryptoExchanges={cryptoExchanges} response={respData} index={index} setIndex={setIndex} updateResponse={updateResponse} currency={currency} setCurrency={setCurrency} />
+        <Body mintrade={mintrade} graphdata={graphdata} updateCrypto={updateCrypto} currentCrypto={currentCrypto} cryptoExchanges={cryptoExchanges} response={respData} index={index} setIndex={setIndex} updateResponse={updateResponse} currency={currency} setCurrency={setCurrency} />
 
       </div>
     );
   }
   else {
     return (<div className="w-100  d-flex justify-content-center  " style={{height:"100vh",backgroundColor:"#FFD580"}}>
-      <div class="con d-flex justify-content-center align-middle">
-        <div class="corgi" style={{marginTop:"27vh"}}>
+      <div className="con d-flex justify-content-center align-middle">
+        <div className="corgi" style={{marginTop:"27vh"}}>
 
-          <div class="head">
-            <div class="ear ear--r"></div>
-            <div class="ear ear--l"></div>
+          <div className="head">
+            <div className="ear ear--r"></div>
+            <div className="ear ear--l"></div>
 
-            <div class="eye eye--left"></div>
-            <div class="eye eye--right"></div>
+            <div className="eye eye--left"></div>
+            <div className="eye eye--right"></div>
 
-            <div class="face">
-              <div class="face__white">
-                <div class=" face__orange face__orange--l"></div>
-                <div class=" face__orange face__orange--r"></div>
+            <div className="face">
+              <div className="face__white">
+                <div className=" face__orange face__orange--l"></div>
+                <div className=" face__orange face__orange--r"></div>
               </div>
             </div>
 
-            <div class="face__curve"></div>
+            <div className="face__curve"></div>
 
-            <div class="mouth">
+            <div className="mouth">
 
-              <div class="nose"></div>
-              <div class="mouth__left">
-                <div class="mouth__left--round"></div>
-                <div class="mouth__left--sharp"></div>
+              <div className="nose"></div>
+              <div className="mouth__left">
+                <div className="mouth__left--round"></div>
+                <div className="mouth__left--sharp"></div>
               </div>
 
-              <div class="lowerjaw">
-                <div class="lips"></div>
-                <div class="tongue test"></div>
+              <div className="lowerjaw">
+                <div className="lips"></div>
+                <div className="tongue test"></div>
               </div>
 
-              <div class="snout"></div>
+              <div className="snout"></div>
             </div>
           </div>
 
-          <div class="neck__back"></div>
-          <div class="neck__front"></div>
+          <div className="neck__back"></div>
+          <div className="neck__front"></div>
 
-          <div class="body">
-            <div class="body__chest"></div>
+          <div className="body">
+            <div className="body__chest"></div>
           </div>
 
-          <div class="foot foot__left foot__front foot__1"></div>
-          <div class="foot foot__right foot__front foot__2"></div>
-          <div class="foot foot__left foot__back foot__3"></div>
-          <div class="foot foot__right foot__back foot__4"></div>
+          <div className="foot foot__left foot__front foot__1"></div>
+          <div className="foot foot__right foot__front foot__2"></div>
+          <div className="foot foot__left foot__back foot__3"></div>
+          <div className="foot foot__right foot__back foot__4"></div>
 
-          <div class="tail test"></div>
+          <div className="tail test"></div>
         </div>
 
 

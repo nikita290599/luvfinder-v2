@@ -21,16 +21,14 @@ function BigCard(props) {
     "EUR": "European Union",
     "RUB": "Russian Ruble"
   };
-  return (<div className="card pull-up mt-5 text-center" style={{ width: '100%' ,background:`url(${back})`}}>
-    <div className="card-body ">
-    
-      <h3 style={{color:"#ffa800"}}>{props.content}</h3>
-      <h4 className="card-text" style={{    fontSize:"32px",fontWeight:"700"}}>{props.data} %</h4>
-      
-
-      <div style={{  fontSize: "14px"  ,color:"#787b86" }}>Average {props.currentCrypto}/{props.symbol}  net price including commission</div>
-    </div>
-  </div>);
+  return (
+    <div className="card pull-up mt-5 text-center" style={{ width: '100%', background: `url(${back})` }}>
+      <div className="card-body ">
+        <h3 style={{ color: "#ffa800" }}>{props.content}</h3>
+        <h4 className="card-text" style={{ fontSize: "32px", fontWeight: "700" }}>{props.data} %</h4>
+        <div style={{ fontSize: "14px", color: "#787b86" }}>Average {props.currentCrypto}/{props.symbol}  net price including commission</div>
+      </div>
+    </div>);
 
 
 }
