@@ -20,7 +20,12 @@ function Card(props) {
     "INR": "Indian Rupees",
     "JPY": "Japanese Yen",
     "EUR": "European Union",
-    "RUB": "Russian Ruble"
+    "RUB": "Russian Ruble", 
+    "CAKE":"CAKE",
+    "BTC":"BTC",
+    "BNB":"BNB",
+    "ETH":"ETH"
+  
   };
   return (<div className="card pull-up mt-5" style={{ width: '100%' }}>
     <div className="card-body">

@@ -92,7 +92,12 @@ function Body(props) {
     "INR": "Indian Rupees",
     "JPY": "Japanese Yen",
     "EUR": "European Union",
-    "RUB": "Russian Ruble"
+    "RUB": "Russian Ruble",
+    "CAKE":"CAKE",
+    "BTC":"BTC",
+    "BNB":"BNB",
+    "ETH":"ETH"
+  
   };
   const cryptImg = {
     'DOGE': doge, 'SHIB': shib, "MIM": mim, "SPELL": spell, "BABYDOGE": babydoge, "ELON": elon, "SAMO": samo, "CATE": cate, "HOGE": hoge, "DOBO": dobo
