@@ -296,10 +296,7 @@ function Body(props) {
   }
   else {
     return (<div className="w-100 d-flex justify-content-center ">
-      hello
-
-
-
+     
     </div>)
   }
 
